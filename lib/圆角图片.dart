@@ -2,8 +2,8 @@
  * @Author: Chris
  * @Date: 2020-09-07 15:53:59
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-10 21:19:24
- * @Descripttion: 内置圆角图片组件
+ * @LastEditTime: 2020-09-10 21:16:10
+ * @Descripttion: 圆角图片（应该是类似web背景图）
  */
 import 'package:flutter/material.dart';
 
@@ -36,14 +36,16 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        child: ClipOval(
-          child: Image.network(
-            'https://pics3.baidu.com/feed/14ce36d3d539b600770f75489730742dc45cb7f7.jpeg?token=0e093d0a6d3f5b9c24b5cb7ed0e6c8a3',
-            height: 120,
-            width: 120,
-            fit: BoxFit.cover,
-          ),
-        ),
+        width: 400,
+        height: 200,
+        decoration: BoxDecoration(
+            color: Colors.yellow,
+            borderRadius: BorderRadius.circular(100),
+            image: DecorationImage(
+              image: NetworkImage(
+                  'https://pics3.baidu.com/feed/14ce36d3d539b600770f75489730742dc45cb7f7.jpeg?token=0e093d0a6d3f5b9c24b5cb7ed0e6c8a3'),
+              fit: BoxFit.contain,
+            )),
       ),
     );
   }
