@@ -2,8 +2,8 @@
  * @Author: Chris
  * @Date: 2020-09-07 15:53:59
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-07 16:17:16
- * @Descripttion: **
+ * @LastEditTime: 2020-09-10 20:51:58
+ * @Descripttion: 引入本地图片（会影响打包的大小）
  */
 import 'package:flutter/material.dart';
 
@@ -22,8 +22,27 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text('首页'),
           ),
-          body: Text('Hello World'),
+          body: HomePage(),
         ),
+      ),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Container(
+        width: 300,
+        height: 120,
+        child: Image.asset(
+          'images/0.jpg',
+          fit: BoxFit.cover,
+        ),
+        decoration: BoxDecoration(color: Colors.yellow),
       ),
     );
   }
