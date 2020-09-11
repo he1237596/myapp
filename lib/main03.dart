@@ -2,8 +2,8 @@
  * @Author: Chris
  * @Date: 2020-09-07 15:53:59
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-11 12:06:03
- * @Descripttion:自定义列表builder(注意取属性用字符串+中括号)
+ * @LastEditTime: 2020-09-11 14:30:21
+ * @Descripttion: 动态列表（注意map方法调用后需要转换数组tolist）
  */
 import 'package:flutter/material.dart';
 
@@ -29,23 +29,27 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  final List list = new List();
-  HomePage({Key key}) : super(key: key) {
-    for (var i = 0; i < 20; i++) {
-      this.list.add({'subtitle': '我是第$i条subtitle', 'title': '我是第$i条title'});
-    }
+  const HomePage({Key key}) : super(key: key);
+
+// 私有方法
+  List _getList() {
+    List list = new List();
+    for (int i = 0; i < 10; i++)
+      list.add({'title': 'title$i', 'subtitle': 'subtitle$i'});
+    print(list);
+    return list;
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: ListView.builder(
-            itemCount: 5,
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text(this.list[index]['title']),
-                subtitle: Text(this.list[index]['subtitle']),
-              );
-            }));
+        child: ListView(
+            // scrollDirection: Axis.horizontal,
+            children: _getList()
+                .map((item) => ListTile(
+                      title: Text(item['title']),
+                      subtitle: Text(item['subtitle']),
+                    ))
+                .toList()));
   }
 }
