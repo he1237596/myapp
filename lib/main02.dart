@@ -2,8 +2,8 @@
  * @Author: Chris
  * @Date: 2020-09-07 15:53:59
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-12 15:44:16
- * @Descripttion: Positioned
+ * @LastEditTime: 2020-09-12 15:41:21
+ * @Descripttion: Align组件单独设置某个子元素未知
  */
 import 'package:flutter/material.dart';
 
@@ -39,13 +39,15 @@ class HomePage extends StatelessWidget {
       width: 300,
       decoration: BoxDecoration(color: Colors.yellow),
       child: Stack(
+        // alignment: Alignment.bottomCenter,
+        alignment: Alignment(0, 0), //设置子元素定位，多个会重叠
         children: [
-          Positioned(
+          Align(
+            alignment: Alignment(1, 0.5), //优先级更高
             child: Text('文本文本1'),
           ),
-          Positioned(
-            left: 100,
-            top: 100,
+          Align(
+            alignment: Alignment(1, -0.5), //优先级更高
             child: Text('文本文本2'),
           ),
           Text('文本文本3'),

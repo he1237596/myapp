@@ -2,8 +2,8 @@
  * @Author: Chris
  * @Date: 2020-09-07 15:53:59
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-12 15:44:16
- * @Descripttion: Positioned
+ * @LastEditTime: 2020-09-12 15:39:15
+ * @Descripttion: Stack配合alignment属性 Alignment坐标以中心为（0，0），范围为（-1~1，-1，1）
  */
 import 'package:flutter/material.dart';
 
@@ -39,15 +39,11 @@ class HomePage extends StatelessWidget {
       width: 300,
       decoration: BoxDecoration(color: Colors.yellow),
       child: Stack(
+        // alignment: Alignment.bottomCenter,
+        alignment: Alignment(-1, 1),
         children: [
-          Positioned(
-            child: Text('文本文本1'),
-          ),
-          Positioned(
-            left: 100,
-            top: 100,
-            child: Text('文本文本2'),
-          ),
+          Text('文本文本1'),
+          Text('文本文本2'),
           Text('文本文本3'),
         ],
       ),
