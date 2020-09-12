@@ -2,8 +2,8 @@
  * @Author: Chris
  * @Date: 2020-09-07 15:53:59
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-12 10:55:21
- * @Descripttion: Expanded(类似flex弹性布局，使用flex属性按比例分配弹性空间)
+ * @LastEditTime: 2020-09-12 10:49:19
+ * @Descripttion: Column mainAxisAlignment，verticalDirection（垂直方向）
  */
 import 'package:flutter/material.dart';
 
@@ -47,30 +47,24 @@ class ListLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: 320,
       height: 500,
       decoration: BoxDecoration(
         color: Colors.redAccent,
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center, // 交叉轴居中
-        textDirection: TextDirection.rtl,
-        // verticalDirection: VerticalDirection.up,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.stretch, // 交叉轴铺满
+        // textDirection: TextDirection.ltr,
+        verticalDirection: VerticalDirection.up,
         children: [
-          Expanded(
-            flex: 1,
-            child: MyButton(
-              Icons.settings,
-              color: Colors.orange,
-            ),
+          MyButton(
+            Icons.settings,
+            color: Colors.orange,
           ),
-          Expanded(
-            flex: 1,
-            child: MyButton(
-              Icons.search,
-              color: Colors.yellow,
-            ),
+          MyButton(
+            Icons.search,
+            color: Colors.yellow,
           ),
           MyButton(
             Icons.message,
@@ -90,17 +84,12 @@ class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80,
-      width: 80,
+      height: 100,
+      width: 100,
       color: this.color,
-      child: ListView(
-        children: [
-          Text('的撒发生大手动'),
-          Icon(
-            this.icon,
-            color: Colors.blueAccent,
-          )
-        ],
+      child: Icon(
+        this.icon,
+        color: Colors.blueAccent,
       ),
     );
   }

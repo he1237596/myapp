@@ -2,8 +2,8 @@
  * @Author: Chris
  * @Date: 2020-09-07 15:53:59
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-12 10:55:21
- * @Descripttion: Expanded(类似flex弹性布局，使用flex属性按比例分配弹性空间)
+ * @LastEditTime: 2020-09-12 10:50:43
+ * @Descripttion: Row mainAxisAlignment,textDirection(水平方向)
  */
 import 'package:flutter/material.dart';
 
@@ -58,19 +58,13 @@ class ListLayout extends StatelessWidget {
         textDirection: TextDirection.rtl,
         // verticalDirection: VerticalDirection.up,
         children: [
-          Expanded(
-            flex: 1,
-            child: MyButton(
-              Icons.settings,
-              color: Colors.orange,
-            ),
+          MyButton(
+            Icons.settings,
+            color: Colors.orange,
           ),
-          Expanded(
-            flex: 1,
-            child: MyButton(
-              Icons.search,
-              color: Colors.yellow,
-            ),
+          MyButton(
+            Icons.search,
+            color: Colors.yellow,
           ),
           MyButton(
             Icons.message,
