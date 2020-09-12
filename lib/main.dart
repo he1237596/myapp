@@ -2,8 +2,8 @@
  * @Author: Chris
  * @Date: 2020-09-07 15:53:59
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-10 20:08:12
- * @Descripttion: **
+ * @LastEditTime: 2020-09-12 18:06:14
+ * @Descripttion: 注意：Container会根据自身以及父节点的限制，将自身调节得足够大，也就是宽高无效(原因和规律待确认)
  */
 import 'package:flutter/material.dart';
 
@@ -33,6 +33,7 @@ class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // color: Colors.red, //该属性和decoration同时使用会报错，Container
       child: Text(
         'Hello World',
 
