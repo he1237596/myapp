@@ -2,7 +2,7 @@
  * @Author: Chris
  * @Date: 2020-09-07 15:53:59
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-14 14:55:25
+ * @LastEditTime: 2020-09-14 14:58:56
  * @Descripttion: AspectRatio设置元素的宽高比，以父组件为参照
  * CircleAvatar和ClipOval 圆角图片
  */
@@ -71,6 +71,7 @@ class HomePage extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
+              Divider(),
               ListTile(
                 leading: CircleAvatar(
                     backgroundImage: NetworkImage(
