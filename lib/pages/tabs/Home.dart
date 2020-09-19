@@ -2,7 +2,7 @@
  * @Author: Chris
  * @Date: 2020-09-19 14:43:27
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-19 15:16:46
+ * @LastEditTime: 2020-09-19 15:18:31
  * @Descripttion: **
  */
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
         onPressed: () {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (BuildContext context) {
-            return SearchPage();
+            return SearchPage(title: '我从首页来');
           }));
         },
       ),
