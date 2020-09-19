@@ -2,8 +2,8 @@
  * @Author: Chris
  * @Date: 2020-09-19 14:49:03
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-19 15:25:57
- * @Descripttion: **
+ * @LastEditTime: 2020-09-19 15:28:42
+ * @Descripttion: 接收参数
  */
 import 'package:flutter/material.dart';
 
