@@ -2,19 +2,21 @@
  * @Author: Chris
  * @Date: 2020-09-19 17:02:07
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-19 17:21:22
+ * @LastEditTime: 2020-09-19 17:56:24
  * @Descripttion: 路由配置
  */
 import 'package:flutter/material.dart';
 import '../pages/Tabs.dart';
 import '../pages/Search.dart';
 import '../pages/Product.dart';
+import '../pages/ProductInfo.dart';
 
 final Map<String, Function> routes = {
   '/': (context) => Tabs(),
   '/search': (context, {arguments}) => SearchPage(arguments: arguments), // 参数传递
   '/product': (context, {arguments}) =>
       ProductPage(arguments: arguments), // 参数传递
+  '/productInfo': (context, {arguments}) => ProductInfoPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {

@@ -2,7 +2,7 @@
  * @Author: Chris
  * @Date: 2020-09-19 17:14:21
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-19 17:26:09
+ * @LastEditTime: 2020-09-19 17:53:52
  * @Descripttion: 有状态组件接收参数 arguments
  */
 import 'package:flutter/material.dart';
@@ -29,7 +29,17 @@ class _ProductPageState extends State<ProductPage> {
       appBar: AppBar(
         title: Text('商品'),
       ),
-      body: Text('商品页接收参数：${arguments['id']}'),
+      body: Column(
+        children: [
+          Text('商品页接收参数：${arguments['id']}'),
+          RaisedButton(
+            child: Text('去详情页测试路由替换'),
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed('/productInfo');
+            },
+          )
+        ],
+      ),
     );
   }
 }
