@@ -2,8 +2,8 @@
  * @Author: Chris
  * @Date: 2020-09-19 14:49:03
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-19 16:56:06
- * @Descripttion: 接收参数 arguments
+ * @LastEditTime: 2020-09-19 17:25:53
+ * @Descripttion: 无状态组件接收参数 arguments
  */
 import 'package:flutter/material.dart';
 
