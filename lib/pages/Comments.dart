@@ -2,7 +2,7 @@
  * @Author: Chris
  * @Date: 2020-09-19 18:04:33
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-22 10:06:44
+ * @LastEditTime: 2020-09-22 10:13:50
  * @Descripttion: **
  */
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class CommentsPage extends StatelessWidget {
         child: RaisedButton(
           child: Text('测试深层路由直接返回根路由'),
           onPressed: () {
-            // Navigator.of(context).pushNamed('/product', arguments: {'id': 1});
+            Navigator.of(context).pushNamed('/product', arguments: {'id': 1});
             // 传参
             // Navigator.of(context).pushNamedAndRemoveUntil(
             //     '/product', (Route route) => false,
