@@ -2,8 +2,10 @@
  * @Author: Chris
  * @Date: 2020-09-07 15:53:59
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-19 17:07:42
- * @Descripttion: 抽离路由配置
+ * @LastEditTime: 2020-09-22 10:12:18
+ * @Descripttion: 抽离路由配置，注意：
+ * 如果不用onGenerateRoute也可以但是要在目标路由得build中获取参数
+ * ModalRoute.of(context).settings.arguments：
  */
 import 'package:flutter/material.dart';
 import 'routes/Routes.dart';
