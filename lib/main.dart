@@ -2,7 +2,7 @@
  * @Author: Chris
  * @Date: 2020-09-07 15:53:59
  * @LastEditors: Chris
- * @LastEditTime: 2020-09-23 14:45:36
+ * @LastEditTime: 2020-09-23 14:56:31
  * @Descripttion: floatingActionButton+BottomNavigationBar实现底部异性tab
  */
 import 'package:flutter/material.dart';
@@ -42,24 +42,38 @@ class _TabsState extends State<Tabs> {
         title: Text('首页'),
       ),
       body: Text('hello world'),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: this._currentIndex,
-        onTap: (index) {
-          this.setState(() {
-            this._currentIndex = index;
-          });
-        },
-        iconSize: 36.0,
-        fixedColor: Colors.red, // 选中颜色
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('首页')),
-          BottomNavigationBarItem(icon: Icon(Icons.people), title: Text('我的')),
-          BottomNavigationBarItem(
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        shape: CircularNotchedRectangle(), // 底部导航栏打一个圆形的洞
+        child: Row(
+          children: [
+            IconButton(
               icon: Icon(
-                Icons.settings,
+                Icons.home,
+                color: this._currentIndex != 0 ? Colors.grey : Colors.redAccent,
               ),
-              title: Text('设置')),
-        ],
+              onPressed: () {
+                this.setState(() {
+                  this._currentIndex = 0;
+                });
+              },
+            ),
+            SizedBox(), //中间位置空出
+            IconButton(
+              icon: Icon(
+                Icons.business,
+                color: this._currentIndex != 2 ? Colors.grey : Colors.redAccent,
+              ),
+              onPressed: () {
+                this.setState(() {
+                  this._currentIndex = 2;
+                  print(this._currentIndex);
+                });
+              },
+            ),
+          ],
+          mainAxisAlignment: MainAxisAlignment.spaceAround, //均分底部导航栏横向空间
+        ),
       ),
       floatingActionButton: Container(
         // padding: EdgeInsets.all(8),
@@ -72,7 +86,7 @@ class _TabsState extends State<Tabs> {
         // margin: EdgeInsets.only(bottom: 0),
         padding: EdgeInsets.all(8),
         child: FloatingActionButton(
-          backgroundColor: this._currentIndex == 1 ? Colors.red : Colors.blue,
+          backgroundColor: this._currentIndex != 1 ? Colors.blue : Colors.red,
           onPressed: () {
             this.setState(() {
               this._currentIndex = 1;
